@@ -1,0 +1,22 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Find user repos</title>
+    <link rel="stylesheet" type= 'text/css' href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@531&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class = 'app'>
+        <div class= 'input'>   
+            <input id='username' type="text" placeholder="Username">
+            <button id='addButton'>Search</button>
+        </div> 
+        <div class='list'>
+            <h2>List of repositories</h2>
+            <ul id='reposList'></ul>
+        </div>
+    </div>
+    <script src='https://unpkg.com/axios/dist/axios.min.js'></script>
+    <script src='main.js'></script>
+</body>
+</html>
