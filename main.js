@@ -10,7 +10,6 @@ function verifyUser(){
             console.log(response);
             ulElement.innerHTML = null;
             for (object of response.data){
-                console.log('entrei no then');
                 var aElement = document.createElement('a');
                 var aText = document.createTextNode(object.name);
                 var liElement = document.createElement('li');
@@ -23,8 +22,12 @@ function verifyUser(){
             }
         })
         .catch(function(error){
-            console.log('entrei no catch')
-            console.warn('Usuário não encontrado');
+            ulElement.innerHTML = null;
+            var userNotFoundText = document.createTextNode('ERRO: O usuário '+ username +' não existe, verifique se você escreveu o nome dele corretamente');
+            var userNotFound = document.createElement('p');
+            userNotFound.appendChild(userNotFoundText);
+            ulElement.appendChild(userNotFound);
+            inputElement.value = null;
         });
 }
 buttonElement.onclick = verifyUser;
